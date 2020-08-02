@@ -33,4 +33,15 @@ public class MainController {
         return "redirect:/";
     }
 
+    @GetMapping("/profile")
+    public String getStudentsPage() {
+        //чтобы вывести список студентов нужно добавить бин StudentsRepository положить данные в Model
+        return "profile";
+    }
+
+    @PostMapping("/profile")
+    public String getStudentsPage() {
+        //чтобы вывести список студентов нужно добавить бин StudentsRepository положить данные в Model
+        return "profile";
+    }
 }
