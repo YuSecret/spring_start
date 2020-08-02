@@ -1,6 +1,6 @@
 package ru.geekbrains.sample.repository;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import ru.geekbrains.sample.dto.Student;
 
 import javax.annotation.PostConstruct;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@Component
+@Service
 public class StudentsRepository {
 
     private List<Student> students;

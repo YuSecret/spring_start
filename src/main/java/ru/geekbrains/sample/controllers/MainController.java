@@ -34,14 +34,14 @@ public class MainController {
     }
 
     @GetMapping("/profile")
-    public String getStudentsPage() {
-        //чтобы вывести список студентов нужно добавить бин StudentsRepository положить данные в Model
+    public String getProfilePage() {
+
         return "profile";
     }
 
     @PostMapping("/profile")
-    public String getStudentsPage() {
-        //чтобы вывести список студентов нужно добавить бин StudentsRepository положить данные в Model
+    public String getStudentById(String id) {
+        System.out.println("id="+id);
         return "profile";
     }
 }
