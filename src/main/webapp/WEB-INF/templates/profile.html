@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>GeekBrains - FORM</title>
+    </head>
+    <body>
+        <h1>Форма отправки данных</h1>
+        <form action="#" th:action="@{/student}" method="GET" th:object="${student}">
+            Enter id: <input type="text" name="id" class="form-control" placeholder="ID">
+            <br>
+            <button type="submit">Отправить</button>
+        </form>
+    </body>
+</html>

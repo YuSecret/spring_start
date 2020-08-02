@@ -1,7 +1,6 @@
 package ru.geekbrains.sample.repository;
 
 import org.springframework.stereotype.Component;
-
 import ru.geekbrains.sample.dto.Student;
 
 import javax.annotation.PostConstruct;

@@ -15,13 +15,19 @@ public class MainController {
       return "index";
    }
 
-    @GetMapping("/students")
+    @GetMapping("/student")
     public String getStudentPage() {
         //чтобы вывести список студентов нужно добавить бин StudentsRepository положить данные в Model
         return "student";
     }
 
-    @PostMapping("/students")
+    @GetMapping("/students")
+    public String getStudentsPage() {
+        //чтобы вывести список студентов нужно добавить бин StudentsRepository положить данные в Model
+        return "students";
+    }
+
+    @PostMapping("/student")
     public String sendForm(@ModelAttribute Student student) {
         System.out.println(student);
         return "redirect:/";
