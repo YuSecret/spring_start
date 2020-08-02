@@ -4,13 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import ru.geekbrains.sample.repository.*;
 import ru.geekbrains.sample.dto.Student;
 
 @Controller
 public class MainController {
-
-   @GetMapping("/")
+    private final StudentsRepository studentsRepository = new StudentsRepository();
+    @GetMapping("/")
    public String getIndexPage() {
       return "index";
    }
@@ -40,8 +40,9 @@ public class MainController {
     }
 
     @PostMapping("/profile")
-    public String getStudentById(String id) {
+    public Student getStudentById(String id) {
         System.out.println("id="+id);
-        return "profile";
+        Student student = studentsRepository.findById(Long.parseLong(id,10));
+        return student;
     }
 }

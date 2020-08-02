@@ -32,8 +32,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
       templateEngine.setEnableSpringELCompiler(true);
       return templateEngine;
    }
-   @Bean StudentsRepository studentsRepository() {
 
+   @Bean
+   public StudentsRepository studentsRepository(){
       return new StudentsRepository();
    }
 
