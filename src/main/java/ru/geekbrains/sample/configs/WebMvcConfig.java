@@ -33,11 +33,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
       return templateEngine;
    }
 
-   @Bean
-   public StudentsRepository studentsRepository(){
-      return new StudentsRepository();
-   }
-
    @Override
    public void configureViewResolvers(ViewResolverRegistry registry) {
       ThymeleafViewResolver resolver = new ThymeleafViewResolver();

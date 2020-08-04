@@ -7,7 +7,20 @@
     <body>
         <h1>Список студентов</h1>
         <table>
-            <tr th:each="student, iterator : ${students}">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="s, iterator : ${students}">
+                    <td th:text="${s.id}"></td>
+                    <td th:text="${s.name}"></td>
+                    <td th:text="${s.score}"></td>
+                </tr>
+            </tbody>
         </table>
     </body>
 </html>

@@ -1,5 +1,5 @@
 package ru.geekbrains.sample.controllers;
-
+import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -9,9 +9,9 @@ import ru.geekbrains.sample.dto.Student;
 
 @Controller
 public class MainController {
-    private final StudentsRepository studentsRepository = new StudentsRepository();
+    private StudentsRepository studentsRepository;
     @GetMapping("/")
-   public String getIndexPage() {
+    public String getIndexPage() {
       return "index";
    }
 
@@ -22,8 +22,10 @@ public class MainController {
     }
 
     @GetMapping("/students")
-    public String getStudentsPage() {
-        //чтобы вывести список студентов нужно добавить бин StudentsRepository положить данные в Model
+    public String getStudentsPage(Model model) {
+        studentsRepository = new StudentsRepository();
+        studentsRepository.init();
+        model.addAttribute("students", studentsRepository.findAll());
         return "students";
     }
 
